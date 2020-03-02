@@ -35,11 +35,11 @@ class SaleOrder(models.Model):
         for record in self:
             if record.order_line:
                 for line in record.order_line:
-                    sale_price = line.price_unit * line.product_uom_qty
-                    discount = (sale_price * line.discount)/100
+                    sale_price = line.price_unit
+                    discount = 0
                     sale_price_after_discount = sale_price - discount
 
-                    cost = line.purchase_price * line.product_uom_qty
+                    cost = line.purchase_price 
                     line_cost += cost
                     margin_amount = (sale_price - discount) - cost
                     if discount:
@@ -70,9 +70,9 @@ class SaleOrderLine(models.Model):
         sale_price_after_discount = 0.0
         for record in self:
             if record.product_id:
-                sale_price = record.price_unit * record.product_uom_qty
-                discount = (sale_price*record.discount)/100
-                cost = record.purchase_price * record.product_uom_qty
+                sale_price = record.price_unit 
+                discount = 0
+                cost = record.purchase_price
                 margin_amount = (sale_price - discount) - cost
                 sale_price_after_discount = sale_price - discount
                 if discount:
@@ -91,9 +91,9 @@ class SaleOrderLine(models.Model):
         sale_price = discount = cost = margin_amount = margin_percentage = 0.0
         for record in self:
             if record.product_id:
-                sale_price = record.price_unit * record.product_uom_qty
+                sale_price = record.price_unit 
                 discount = (sale_price*record.discount)/100
-                cost = record.purchase_price * record.product_uom_qty
+                cost = record.purchase_price
                 margin_amount = (sale_price - discount) - cost
                 record.margin_amount = margin_amount
 
