@@ -22,7 +22,7 @@
         </field>
     </record>
 
-    <!-- Extended Quotation Tree View to add Sales Margin Percentage functionality -->
+    <!-- Extended Quotation Tree View to add Sales Margin Percentage functionality 
     <record model="ir.ui.view" id="view_quotation_tree_sale_margin_percentage">
         <field name="name">sale.quotation.tree.sale.margin.percentage</field>
         <field name="model">sale.order</field>
@@ -32,7 +32,7 @@
                 <field name="margin_percentage" groups="base.group_user"/>
             </xpath>
         </field>
-    </record>
+    </record> -->
 
     <!-- Extended Sale Order Tree View to add Sales Margin Percentage functionality 
     <record model="ir.ui.view" id="view_order_tree_sale_margin_percentage">
