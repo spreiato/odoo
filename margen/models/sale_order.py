@@ -48,17 +48,17 @@ class SaleOrder(models.Model):
                     total_sale_price += sale_price
                     line_margin_amount += margin_amount
                 if line_cost and total_sale_price:
-                    margin_percentage = (line_margin_amount / total_sale_price) * 100
+                    margin_percentage = (((sale_price-discount) / cost)-1) * 100
                 elif not total_sale_price and line_cost:
                     margin_percentage = 0
                 elif total_sale_price and not line_cost:
                     margin_percentage = 100
                 if total_sale_price < 0.0:
                     #str(round(margin_percentage,2))
-                    record.margin_percentage = '-' + '1230' + ' %'
+                    record.margin_percentage = '-' + str(round(margin_percentage,2))+ ' %'
                 else:
                     #str(round(margin_percentage,2)) 
-                    record.margin_percentage = '1230'+ ' %'
+                    record.margin_percentage = str(round(margin_percentage,2))+ ' %'
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -81,7 +81,7 @@ class SaleOrderLine(models.Model):
                 if discount:
                     sale_price = sale_price_after_discount
                 if cost and sale_price:
-                    margin_percentage = (margin_amount / sale_price) * 100 
+                    margin_percentage = (((sale_price-discount) / cost)-1) * 100
                 else:
                     margin_percentage = 100
                 if sale_price < 0.0:
@@ -100,5 +100,5 @@ class SaleOrderLine(models.Model):
                 cost = record.purchase_price
                 margin_amount = (sale_price - discount) - cost
                 #margin_amount
-                record.margin_amount = '43210'
+                record.margin_amount = margin_amount
 
