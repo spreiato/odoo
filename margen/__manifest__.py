@@ -20,12 +20,12 @@
 #################################################################################
 
 {
-    'name': "Sales Margin Percentage",
-    'author': 'Ascetic Business Solution',
+    'name': "Sales Margen Porcentaje",
+    'author': 'Santiago Preiato',
     'category': 'Sale',
-    'summary': """Sales Margin Percentage in Quotation and Sales Order""",
+    'summary': """Margen Precio """,
     'license': 'AGPL-3',
-    'website': 'http://www.asceticbs.com',
+    'website': 'http://www.rssystems.com.ar',
     'description': """
 """,
     'version': '11.0.1.0',

@@ -53,9 +53,11 @@ class SaleOrder(models.Model):
                 elif total_sale_price and not line_cost:
                     margin_percentage = 100
                 if total_sale_price < 0.0:
-                    record.margin_percentage = '-' + str(round(margin_percentage,2)) + ' %'
+                    #str(round(margin_percentage,2))
+                    record.margin_percentage = '-' + 0 + ' %'
                 else:
-                    record.margin_percentage = str(round(margin_percentage,2)) + ' %'
+                    #str(round(margin_percentage,2)) 
+                    record.margin_percentage = 0+ ' %'
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
