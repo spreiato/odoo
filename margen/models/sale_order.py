@@ -28,6 +28,7 @@ class SaleOrder(models.Model):
 
     @api.one
     @api.depends('order_line','order_line.product_uom_qty','order_line.price_unit', 'order_line.discount', 'order_line.purchase_price')
+    #OBTENGO MARGEN TOTAL %
     def _get_average_margin_percentage(self):
         sale_price = discount = cost = margin_amount = 0.0
         sale_price_after_discount = 0.0
@@ -54,10 +55,10 @@ class SaleOrder(models.Model):
                     margin_percentage = 100
                 if total_sale_price < 0.0:
                     #str(round(margin_percentage,2))
-                    record.margin_percentage = '-' + '0' + ' %'
+                    record.margin_percentage = '-' + '1230' + ' %'
                 else:
                     #str(round(margin_percentage,2)) 
-                    record.margin_percentage = '0'+ ' %'
+                    record.margin_percentage = '1230'+ ' %'
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -89,6 +90,7 @@ class SaleOrderLine(models.Model):
                     record.margin_percentage = str(round(margin_percentage,2)) + ' %'
 
     @api.depends('product_uom_qty','price_unit', 'discount', 'purchase_price')
+    #OBTENGO MONTO MARGEN TOTAL
     def _get_total_amount(self):
         sale_price = discount = cost = margin_amount = margin_percentage = 0.0
         for record in self:
@@ -97,5 +99,6 @@ class SaleOrderLine(models.Model):
                 discount = (sale_price*record.discount)/100
                 cost = record.purchase_price
                 margin_amount = (sale_price - discount) - cost
-                record.margin_amount = margin_amount
+                #margin_amount
+                record.margin_amount = '43210'
 
