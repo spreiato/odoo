@@ -6,7 +6,7 @@
     'version': '1.0',
     'author': ['Santiago Preiato'],
     'category': 'Tools',
-    'summary': 'Precio Costo USD',
+    'summary': 'Fecha Cumpleaños Cliente',
     'website': 'https://www.sgpgestion.com.ar',
     'description': """
 Precio Costo USD.
