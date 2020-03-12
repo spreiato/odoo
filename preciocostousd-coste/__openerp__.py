@@ -2,16 +2,16 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Precio Costo USD',
+    'name': 'Fecha Cumpleaños Cliente',
     'version': '1.0',
     'author': ['Santiago Preiato'],
     'category': 'Tools',
     'summary': 'Fecha Cumpleaños Cliente',
     'website': 'https://www.sgpgestion.com.ar',
     'description': """
-Precio Costo USD.
+Fecha Cumpleaños
 ======================
-Con este módulo mostraremos Precio Costo Dolares
+Con este módulo mostraremos Fecha Cumpleaños
     """,
     'depends': ['base'],
     'data': [
