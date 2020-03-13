@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Fecha Cumpleaños Cliente',
+    'name': 'fcumple',
     'version': '1.0',
     'author': ['Santiago Preiato'],
     'category': 'Tools',
@@ -15,7 +15,7 @@ Con este módulo mostraremos Fecha Cumpleaños
     """,
     'depends': ['base'],
     'data': [
-        'preciocostousd_view.xml',
+        'fcumple_view.xml',
     ],
     'installable': True,
     'auto_install': True,
